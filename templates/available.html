@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% from "_formhelpers.html" import render_field %}
+    <form method =post action="/available/">
+        <dl>
+            {{render_field(form.begin)}}
+            {{render_field(form.end)}}
+        </dl>
+        <p><input type=submit value=available></p>
+
+    </form>
+
+
+    {% if error %}
+        <p class="error">Error:{{error}}</p>
+     {% endif %}
+</body>
+</html>
